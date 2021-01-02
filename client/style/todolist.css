@@ -1,0 +1,116 @@
+.todolist{
+width: 1280px;
+margin:0 auto;
+
+}
+
+.todo{
+    border: 1px solid darkgrey;
+    background-color: white;
+    padding: 20px 0;
+    margin-top: 25px;
+}
+
+.todo_title{
+font-size: 30px;
+color: rgb(19, 36, 36);
+margin-left: 40px;
+}
+
+.todo_description{
+    margin-left: 40px;
+font-size: 15px;
+color: darkslategrey;
+}
+
+.todo_edit{
+    color: white;
+    width: 50px;
+    height: 40px;
+    background: orange;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.todo_edit:hover{
+    color: black;
+}
+.todo_edit:focus{
+    outline: none;
+}
+.todo_edit:active{
+    background: none;
+}
+.todo_delete{
+    margin-top: 20px;
+    color: white;
+    width: 80px;
+    height: 40px;
+    background: red;
+}
+.todo_delete:hover{
+    color: black;
+}
+.todo_delete:focus{
+    outline: none;
+}
+.todo_delete:active{
+    background: none;
+}
+
+.title_edit_input{
+    border: 1px solid darkgrey;
+width: 30%;
+height: 25px;
+background: white;
+margin-left: 40px;
+margin-bottom: 20px;
+}
+.title_edit_input:focus{
+outline: none;
+}
+.description_edit_input{
+    border: 1px solid darkgrey;
+    margin-left: 40px;
+width: 30%;
+height: 25px;
+background-color: white;
+}
+.description_edit_input:focus{
+    outline: none;
+}
+
+.save_button{
+    color: white;
+    width: 50px;
+    height: 40px;
+    background: orange;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.save_button:hover{
+    color: black;
+}
+.save_button:focus{
+    outline: none;
+}
+.save_button:active{
+    background: none;
+}
+
+.cancel_button{
+    margin-top: 20px;
+    color: white;
+    width: 80px;
+    height: 40px;
+    background: red;
+}
+.cancel_button:hover{
+    color: black;
+}
+.cancel_button:focus{
+    outline: none;
+}
+.cancel_button:active{
+    background: none;
+}

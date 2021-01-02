@@ -1,0 +1,78 @@
+.header{
+
+}
+.container{
+    margin: 0 auto;
+    width: 1200px;
+}
+.header_title{
+    padding-top: 25px;
+    color: darkslategrey;
+    font-size: 30px;
+    padding-bottom: 40px;
+    border-color: green;
+    border-bottom:1px solid darkslategrey;
+
+}
+.header_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100px;
+    height:40px;
+    background-color: green;
+    color:white;
+    margin-top: 20px;
+    border: 1px solid green;
+    border-radius: 5%;
+}
+
+.header_input_block{
+    margin-top: 15px;
+    border: 1px solid darkgrey;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px darkslategrey;
+}
+
+
+.header_title_input{
+    margin:10px 0;
+    width:90%;
+    margin-left: 40px;
+    height:25px;
+    border: 1px solid darkgrey;
+}
+.header_title_input:focus{
+    outline: none;
+}
+.header_description_input{
+    width: 90%;
+    height: 40px;
+    margin-left: 40px;
+    margin-bottom: 15px;
+    border:1px solid darkgrey;
+}
+.header_description_input:focus{
+    outline: none;
+}
+.header_input_block_button{
+    width: 80px;
+    height:40px;
+    margin-left: 40px;
+    background-color: green;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 5%;
+}
+.header_input_block_button:hover{
+    color: black;
+
+}
+.header_input_block_button:active{
+    background:none;
+    box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.6);
+
+}
+.header_input_block_button:focus{
+    outline: none;
+}
