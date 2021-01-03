@@ -9,7 +9,13 @@ import React from 'react'
 import cookieParser from 'cookie-parser'
 import config from './config'
 import Html from '../client/html'
-import { getToDoList, patchToDo, postToDo,deleteToDo } from './controllers/getTodolist'
+import {
+  getToDoList,
+  patchToDo,
+  postToDo,
+  deleteToDo,
+  MongooseConnect
+} from './controllers/getTodolist'
 
 const Root = () => ''
 
@@ -39,13 +45,14 @@ const middleware = [
   bodyParser.json({ limit: '50mb', extended: true }),
   cookieParser()
 ]
+MongooseConnect()
 
 middleware.forEach((it) => server.use(it))
 
 server.get('/api/v1/todos', getToDoList)
 server.post('/api/v1/todos', postToDo)
 server.patch('/api/v1/todos', patchToDo)
-server.delete('/api/v1/todos/:id',deleteToDo)
+server.delete('/api/v1/todos/:date', deleteToDo)
 
 server.use('/api/', (req, res) => {
   res.status(404)

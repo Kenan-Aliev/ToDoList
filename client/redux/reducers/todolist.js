@@ -28,27 +28,26 @@ export const postToDo = (title, description) => {
       description,
       date: new Date()
     }
-    let post = [...getState().todolist.toDo]
+    const post = [...getState().todolist.toDo,newToDo]
     if (title && description) {
-      post = [...post, newToDo]
+       // eslint-disable-next-line no-unused-expressions
+      axios.post('/api/v1/todos', { newToDo })
       return dispatch({ type: GET_TODO, toDo: post })
     }
-    // eslint-disable-next-line no-unused-expressions
-    return axios.post('/api/v1/todos', { newToDo })
+   return console.log(post)
   }
 }
 
-export const patchToDo = (title, description, id) => {
-  return (dispatch,getState) => {
+export const patchToDo = (title, description, date) => {
+  return (dispatch, getState) => {
     const toDoList = [...getState().todolist.toDo]
     const newToDo = {
-      _id: id,
       title,
       description,
-      date: new Date()
+      date
     }
     const patchedToDolist = toDoList.map((todo) => {
-      return todo._id === id ? {...newToDo } : todo
+      return todo.date === date ? { ...newToDo } : todo
     })
     console.log(patchedToDolist)
     axios.patch('/api/v1/todos', { newToDo })
@@ -56,11 +55,11 @@ export const patchToDo = (title, description, id) => {
   }
 }
 
-export const deleteToDo=(id)=>{
-  return (dispatch,getState)=>{
-    const toDoList=[...getState().todolist.toDo]
-    const deletedToDo=toDoList.filter(todo=>todo._id !== id)
-    axios.delete(`api/v1/todos/${id}`)
-    return dispatch({type:GET_TODO,toDo:deletedToDo})
+export const deleteToDo = (date) => {
+  return (dispatch, getState) => {
+    const toDoList = [...getState().todolist.toDo]
+    const deletedToDo = toDoList.filter((todo) => todo.date !== date)
+    axios.delete(`/api/v1/todos/${date}`)
+    return dispatch({ type: GET_TODO, toDo: deletedToDo })
   }
 }

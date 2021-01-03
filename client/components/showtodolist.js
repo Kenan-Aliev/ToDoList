@@ -17,7 +17,11 @@ const ShowToDoList = ({ todo }) => {
           <button className="todo_edit" type="button" onClick={() => setEdit(true)}>
             Edit
           </button>
-          <button className="todo_delete" type="button" onClick={()=>dispatch(deleteToDo(todo._id))}>
+          <button
+            className="todo_delete"
+            type="button"
+            onClick={() => dispatch(deleteToDo(todo.date))}
+          >
             Delete
           </button>
         </div>
@@ -40,7 +44,7 @@ const ShowToDoList = ({ todo }) => {
           <button
             className="save_button"
             type="button"
-            onClick={() => dispatch(patchToDo(editTitle,editDescription , todo._id))}
+            onClick={() => dispatch(patchToDo(editTitle, editDescription, todo.date))}
           >
             Save
           </button>
